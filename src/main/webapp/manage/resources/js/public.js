@@ -1,0 +1,22 @@
+//公用js
+document.write('<script type="text/javascript" src="resources/js/My97DatePicker/WdatePicker.js"></script>');
+document.write('<script type="text/javascript" src="resources/js/encrypt/md5.js"></script>');
+document.write('<script type="text/javascript" src="resources/js/encrypt/aes.js"></script>');
+document.write('<script type="text/javascript" src="resources/js/encrypt/encryptCode.js"></script>');
+document.write('<script src="resources/dataTables/js/jquery.dataTables.js" type="text/javascript"></script>');
+document.write('<script src="resources/js/footer.js"></script>');
+document.write('<script src="assets/js/bootstrap.min.js"></script>');
+document.write('<script src="assets/js/jquery-ui.custom.min.js"></script>');
+document.write('<script src="assets/js/jquery.ui.touch-punch.min.js"></script>');
+document.write('<script src="assets/js/jquery.easypiechart.min.js"></script>');
+document.write('<script src="assets/js/jquery.sparkline.index.min.js"></script>');
+document.write('<script src="assets/js/jquery.flot.min.js"></script>');
+document.write('<script src="assets/js/jquery.flot.pie.min.js"></script>');
+document.write('<script src="assets/js/jquery.flot.resize.min.js"></script>');
+document.write('<script src="assets/js/ace-elements.min.js"></script>');
+document.write('<script src="assets/js/ace.min.js"></script>');
+document.write('<script src="resources/js/checkBoxAll.js"></script>');
+document.write('<script src="resources/js/loginout.js"></script>');
+document.write('<script src="resources/artDialog4.1.7/jquery.artDialog.js"></script>');
+document.write('<script src="resources/uploadFile/upload.js"></script>');
+//document.write('');

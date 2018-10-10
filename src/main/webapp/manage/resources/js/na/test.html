@@ -1,0 +1,46 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>向指定的节点追加子节点</title>
+
+
+
+<!-- jquery1.4.2 -->
+<script type="text/javascript" src="../jquery/jquery-1.4.2.min.js"></script>
+
+<!-- tree -->
+<link href="tree/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="tree/jquery.na.tree.js"></script>
+<!--初始化tree的js -->
+<script type="text/javascript">
+	$(function()
+		{
+			$("#myTree").natree({
+			        rootId:"Root_myTree",
+					rootName : "公司资料"						
+				});
+			
+			var str = '[		{"parentId":"Root_myTree","id":"node1","name":"节点1"},		{"parentId":"Root_myTree","id":"node2","name":"节点2"},		{"parentId":"Root_myTree","id":"node3","name":"节点3"},		{"parentId":"node1","id":"sub_node1_1","name":"节点1_1"},		{"parentId":"node1","id":"sub_node1_2","name":"节点1_2"},		{"parentId":"node2","id":"sub_node2_1","name":"节点2_1"},	    {"parentId":"sub_node2_1","id":"sub_node2_1_1","name":"节点2_1_1"},	    {"parentId":"sub_node2_1","id":"sub_node2_1_2","name":"节点2_1_2"}	]';
+			
+			$("#myTree").setTreeData(str);
+			
+		}
+	);
+	
+	function myTree_nodeClick(nodeId,params,nodeName)
+	{
+		alert(nodeId+":"+nodeName);		
+	}
+
+		
+</script>
+
+</head>
+<body>
+
+	<div id="myTree" class="natree"
+		style="width: auto; height: auto; overflow: auto;"></div>
+
+</body>
+</html>

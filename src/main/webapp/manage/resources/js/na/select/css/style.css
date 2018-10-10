@@ -1,0 +1,53 @@
+/*ȫ�ֱ�ǩ�ض���*/
+
+/*����(����ѡ�������)*/
+.naselect {
+	border: #999999 1px solid;
+	color: #000000;
+	background-color: #ffffff;
+	line-height: 18px !important;
+	margin-right: 0px;
+	float: left;
+	cursor: pointer;
+}
+
+.naselect_droplist {
+	border: #999999 1px solid;
+	border-collapse: collapse;
+	cursor: pointer;
+}
+
+.naselect a {
+	display: block;
+	width: 22px;
+	background: url("../images/btn_select_bg.gif");
+	float: left;
+}
+
+.naselect a.out {
+	-moz-outline-style: none;
+}
+
+.naselect a.in {
+	background: url("../images/btn_select_bg.gif") 22px 0px;
+	float: left;
+}
+
+/*  ���������ѡ�к�,��ɫ */
+.naselect_droplist tr.over td {
+	background: yellow;
+}
+
+.naselect_droplist table {
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+}
+
+.naselect_droplist td {
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	white-space: nowrap;
+}

@@ -1,0 +1,296 @@
+.tbox .titlebar .figure {
+	background: url(/images/app/icons/75/help.png__49063.png) no-repeat;
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://asset2.139js.com/images/app/icons/75/help.png');
+}
+
+#leftcolumn {
+	width: 140px;
+}
+
+#maincolumn {
+	width: 760px;
+	padding: 20px 20px 40px 30px;
+}
+
+#leftlayout {
+	float: left;
+	margin-left: 16px;
+	width: 691px;
+	display: inline;
+}
+
+#rightcolumn {
+	background: #F6F6F6;
+	float: right;
+	margin-right: 16px;
+	padding-bottom: 8px;
+	width: 209px;
+	padding: 0 8px;
+	display: inline;
+}
+
+.helpdirlist ul {
+	border-top: 1px solid #CCE1F6;
+	margin-top: 10px;
+}
+
+.helpdirlist ul li {
+	font-size: 14px;
+	border-bottom: 1px solid #CCE1F6;
+	height: 28px;
+	line-height: 28px;
+}
+
+.helpdirlist ul li a {
+	display: block;
+	padding-left: 20px;
+}
+
+.helpdirlist ul li a:hover {
+	background: #369;
+	color: #fff;
+	font-weight: bold;
+}
+
+.helpdirlist ul li.current a {
+	background: #369;
+	color: #fff;
+	font-weight: bold;
+}
+
+.helpitemlist {
+	padding-bottom: 6px;
+}
+
+.helpitemlist h1 {
+	background: url(/images/icons/dashed.gif__49063.gif) no-repeat 0 3px;
+	padding-left: 16px;
+	margin-bottom: 6px;
+	font-weight: bold;
+}
+
+.helpitemlist h1 a.b {
+	color: #000;
+}
+
+.helpitemlist .helproom {
+	border: 1px solid #ECECEC;
+	padding: 10px 15px;
+	margin-left: 16px;
+	line-height: 1.5;
+}
+
+p.b, td.b {
+	font-size: 14px;
+}
+
+p.center {
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	padding-bottom: 10px;
+}
+
+p.padding {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	line-height: 1.8;
+}
+
+p.title {
+	font-weight: bold;
+	padding: 5px 0;
+}
+
+.job {
+	width: 600px;
+	margin: auto;
+	border-spacing: 1px;
+	border-collapse: inherit;
+	margin-bottom: 30px;
+}
+
+.job td {
+	padding: 5px 0 5px 10px;
+}
+
+.paddingleft {
+	padding-left: 20px;
+}
+
+.helpblock {
+	padding-bottom: 15px;
+}
+
+.helpblock div.groupstitle {
+	background: url(/images/chrome/groupborder.gif__49063.gif) no-repeat
+		right;
+	padding-right: 15px;
+}
+
+.helpblock div.groupstitle h3 {
+	background: url(/images/chrome/groupborder.gif__49063.gif) no-repeat
+		left;
+	height: 27px;
+	line-height: 27px;
+	padding-left: 15px;
+}
+
+.helptag {
+	padding-top: 15px;
+	height: 27px;
+	line-height: 27px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+
+.helpblock .room {
+	padding-left: 18px;
+}
+
+.helpblock .room h1 {
+	height: 33px;
+	line-height: 33px;
+	cursor: pointer;
+	padding-left: 15px;
+	background: url(/images/icons/dashed.gif__49063.gif) no-repeat 0 11px;
+}
+
+.helpblock .room .active div.block {
+	border: 1px solid #E5E5E5;
+	padding: 8px 12px;
+	line-height: 1.5;
+}
+
+.helpblock .comments {
+	padding-left: 60px;
+	padding-top: 20px;
+}
+
+.helpblock .comments textarea {
+	width: 500px;
+}
+
+.helpblock .comments .submit {
+	padding-top: 10px;
+}
+
+.helptag li {
+	padding: 0 8px;
+	float: left;
+	background: url(/images/help/line.gif__49063.gif) no-repeat right;
+}
+
+* html .helptag li {
+	width: 40px;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.helptag li.current .current {
+	background: url(/images/help/tagdef.gif__49063.gif) center bottom;
+}
+
+.helptag li.current span.tagbg {
+	background: url(/images/help/tagdef.gif__49063.gif) no-repeat center;
+	height: 27px;
+	display: inline-block;
+}
+
+.helptag li.current span.tagbg a:link, .helptag li.current span.tagbg a:visited
+	{
+	color: #fff;
+	background: #488DC8;
+	padding: 0 8px;
+	display: inline-block;
+	height: 21px;
+	line-height: 21px;
+}
+
+a.link:link, a.link:visited {
+	background: url(/images/help/bg.gif__49063.gif) no-repeat;
+	height: 22px;
+	width: 74px;
+	display: inline-block;
+	line-height: 22px;
+	margin-right: 10px;
+	text-align: center;
+	color: #fff;
+}
+
+#helpcontent, #feedback {
+	min-height: 200px;
+}
+
+#feedback .qa {
+	background: url(/images/help/line_bg.gif__49063.gif) repeat-x bottom;
+	padding: 10px 0;
+}
+
+#feedback .qa .q {
+	background: url(/images/help/q.gif__49063.gif) no-repeat 0 4px;
+	padding-left: 18px;
+	line-height: 1.5;
+	margin-bottom: 5px;
+}
+
+#feedback .qa .a {
+	background: url(/images/help/a.gif__49063.gif) no-repeat 0 4px;
+	padding-left: 18px;
+	line-height: 1.5;
+	color: #390;
+}
+
+.mbox {
+	margin-bottom: 5px;
+}
+
+.mbox h1 {
+	padding: 10px 0 5px 5px;
+}
+
+.mbox .clent {
+	border: 1px solid #E1E1E1;
+	padding: 5px 8px;
+	background: #fff;
+}
+
+.mbox .margin {
+	margin-bottom: 10px;
+}
+
+.mbox .clent .row {
+	background: url(/images/help/line_bg.gif__49063.gif) repeat-x bottom;
+	padding: 8px 0;
+}
+
+.mbox .clent .row p.dot {
+	background: url(/images/home2/dot.gif__49063.gif) no-repeat 0 5px;
+	padding-left: 10px;
+}
+
+.mbox .clent .row .photo {
+	float: left;
+	width: 65px;
+}
+
+.mbox .clent .row .photo img {
+	width: 65px;
+}
+
+.mbox .clent .row .cont {
+	float: left;
+	margin-left: 5px;
+	width: 120px;
+}
+
+#rightcolumn .mbox .userphoto {
+	float: left;
+	margin-right: 5px;
+}
+
+#rightcolumn .mbox .explain {
+	clear: both;
+	padding-top: 5px;
+}

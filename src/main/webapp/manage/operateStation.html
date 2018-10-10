@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>悠扬管理后台</title>
+
+<meta name="description" content="overview &amp; stats" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<script type="text/javascript" src="resources/js/publicCss.js"></script>
+<script type="text/javascript" src="resources/js/header.js"></script>
+</head>
+
+<body class="no-skin">
+	<script src="header.js"></script>
+	<div class="main-container ace-save-state" id="main-container">
+		<script type="text/javascript">
+				try{ace.settings.loadState('main-container')}catch(e){}
+			</script>
+			<div id="sidebar"  class="sidebar  responsive  ace-save-state">
+			<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+			<!-- /.sidebar-shortcuts -->
+
+			<ul class="nav nav-list">
+				<li><a href="index.html"> <i class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
+							首页 </span>
+				</a> <b class="arrow"></b></li>
+
+				<li class="active open"><a href="#" class="dropdown-toggle"> <i
+						class="menu-icon fa fa-desktop"></i> <span class="menu-text">
+							系统设置 </span> <b class="arrow fa fa-angle-down"></b>
+				</a> <b class="arrow"></b>
+
+					<ul class="submenu">
+						<li class=""><a href="#" class="dropdown-toggle"> <i
+								class="menu-icon fa fa-caret-right"></i> 用户管理 <b
+								class="arrow fa fa-angle-down"></b>
+						</a> <b class="arrow"></b>
+
+							<ul class="submenu">
+								<li class=""><a href="roleList.html"> <i
+										class="menu-icon fa fa-caret-right"></i> 角色管理
+								</a> <b class="arrow"></b></li>
+
+								<li class=""><a href="userList.html"> <i
+										class="menu-icon fa fa-caret-right"></i> 用户列表
+								</a> <b class="arrow"></b></li>
+							</ul></li>
+
+						<li class="active"><a href="stationList.html"> <i
+								class="menu-icon fa fa-caret-right"></i> 站点列表
+						</a> <b class="arrow"></b></li>
+					</ul></li>
+
+
+			</ul>
+			<!-- /.nav-list -->
+
+			<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+				<i id="sidebar-toggle-icon"
+					class="ace-icon fa fa-angle-double-left ace-save-state"
+					data-icon1="ace-icon fa fa-angle-double-left"
+					data-icon2="ace-icon fa fa-angle-double-right"></i>
+			</div>
+		</div>
+		<div class="main-content">
+			<div class="main-content-inner">
+				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">系统设置</a>
+						</li>
+						<li class="active">站点列表</li>
+						<li class="active">站点详情</li>
+					</ul>
+					<!-- /.breadcrumb -->
+
+					<!-- <div class="nav-search" id="nav-search">
+						<form class="form-search">
+							<span class="input-icon"> <input type="text"
+								placeholder="Search ..." class="nav-search-input"
+								id="nav-search-input" autocomplete="off" /> <i
+								class="ace-icon fa fa-search nav-search-icon"></i>
+							</span>
+						</form>
+					</div> -->
+					<!-- /.nav-search -->
+				</div>
+
+				<div class="page-content">
+
+					<!-- <div class="page-header">
+						<h1>
+							生活服务<small> <i class="ace-icon fa fa-angle-double-right"></i>
+							邀请码管理
+							</small>
+						</h1>
+					</div> -->
+					<div class="table-responsive">
+					<form method="post" id="uploadForm" enctype="multipart/form-data">
+						<table class="table table-striped table-bordered table-hover"
+							style="margin-top: 20px;">
+							<tbody>
+								<tr>
+									<td style="width: 15%;">站点主名称：<font color="red">*</font></td>
+									<td style="text-align: left;"><input type="text"
+										style="width: 650px;" id="main_name" name="main_name"/></td>
+								</tr>
+								<tr>
+									<td style="width: 15%;">站点备名称：</td>
+									<td style="text-align: left;"><input type="text"
+										style="width: 650px;" id="prepare_name" name="prepare_name"/></td>
+								</tr>
+								<tr>
+									<td style="width: 15%;">经度：<font color="red">*</font></td></td>
+									<td style="text-align: left;"><input type="text"
+										style="width: 200px;" id="longitude" name="longitude"/></td>
+								</tr>
+								<tr>
+									<td style="width: 15%;">纬度：<font color="red">*</font></td>
+									<td style="text-align: left;"><input type="text"
+										style="width: 200px;" id="latitude" name="latitude"/></td>
+								</tr>
+								<tr>
+									<td style="width: 15%;">所在地址：</td>
+									<td style="text-align: left;"><textarea type="text" name="address"
+											style="width: 650px; margin: 0px; height: 135px;" id="address"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 15%;">描述：</td>
+									<td style="text-align: left;"><textarea type="text" name="remarks"
+											style="width: 650px; margin: 0px; height: 135px;" id="remarks"></textarea>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 10%;">logo：<font color="red">*</font></td></td>
+									<td style="text-align: left;">
+									<a href="javascript:void(0);" class="fileChoose" style="margin-top: 4px;">选择文件
+									<input type="file" id="file" name="file" placeholder="选择文件" onchange="uploadFile(this,'imgs');" style="width: 60px;">
+									</a><dl class="dl2 advpics" id="imgs" style="float:left;display: none; margin-bottom:0;height: 50px;"></dl></td>
+								</tr>
+								<tr>
+									<td style="width: 15%;">是否选中展示该站点数据：</td>
+									<td style="text-align: left;">
+									<input type="radio" style="width: 40px;" name="status" value="1"/>是
+									<input type="radio" style="width: 40px;" name="status" value="0"/>否
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td style="text-align: left;">
+										<button class="btn btn-info" type="button" onclick="saveStation()" style="border:0;margin-right:10px;">
+											<i class="icon-ok bigger-110"></i> 保存
+										</button>
+			
+										<button class="btn btn-info" type="button" onclick="javascript:window.location.href='stationList.html'" style="border:0;">
+											<i class="icon-arrow-left bigger-110"></i>返回
+										</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</form>
+					</div>
+					<!-- /.page-header -->
+				</div>
+			</div>
+		</div>
+		<!-- /.main-content -->
+<script src="footer.js"></script>
+
+		<a href="#" id="btn-scroll-up"
+			class="btn-scroll-up btn btn-sm btn-inverse"> <i
+			class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+		</a>
+	</div>
+	<!-- 图片弹出层 -->
+		<div id="outerdiv"
+			style="position: fixed; top: 0; left: 0; background: rgba(0, 0, 0, 0.7); z-index: 2; width: 100%; height: 100%; display: none;">
+			<div id="innerdiv" style="position: absolute;">
+				<img id="bigimg" style="border: 5px solid #fff;" src="" />
+			</div>
+		</div>
+	<!-- 分页 -->
+	<script type="text/javascript" src="resources/js/public.js"></script>
+	<script type="text/javascript" src="resources/station/stationDetail.js"></script>
+	<!-- <script type="text/javascript" src="resources/kindeditor-4.1.10/kindeditor-min.js"></script>
+	<script type="text/javascript" src="resources/kindeditor-4.1.10/lang/zh_CN.js"></script>
+	<script src="resources/userManage/users.js"></script>
+	<script type="text/javascript">
+		var editor;
+        	KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+                resizeType : 1,
+                allowPreviewEmoticons : false,
+                allowImageUpload : false,
+                items : [
+                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                    'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+            });
+        });
+	</script> -->
+</body>
+</html>

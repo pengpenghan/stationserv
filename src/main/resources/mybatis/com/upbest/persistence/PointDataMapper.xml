@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.upbest.persistence.PointDataMapper" >
+  <resultMap id="BaseResultMap" type="com.upbest.model.PointData" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="station_id" property="stationId" jdbcType="INTEGER" />
+    <result column="device_id" property="deviceId" jdbcType="INTEGER" />
+    <result column="data_type_id" property="dataTypeId" jdbcType="INTEGER" />
+    <result column="data_value" property="dataValue" jdbcType="VARCHAR" />
+    <result column="date_time" property="dateTime" jdbcType="TIMESTAMP" />
+    <association column="data_type_id" property="dataType" select="com.upbest.persistence.DataTypeMapper.selectByPrimaryKey"/>
+    <association column="device_id" property="device" select="com.upbest.persistence.DeviceMapper.selectByPrimaryKey"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, station_id, device_id, data_type_id, data_value, date_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from mg_point_data
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mg_point_data
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.upbest.model.PointData" >
+    insert into mg_point_data (id, station_id, device_id, 
+      data_type_id, data_value, date_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{stationId,jdbcType=INTEGER}, #{deviceId,jdbcType=INTEGER}, 
+      #{dataTypeId,jdbcType=INTEGER}, #{dataValue,jdbcType=VARCHAR}, #{dateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.upbest.model.PointData" >
+    insert into mg_point_data
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="stationId != null" >
+        station_id,
+      </if>
+      <if test="deviceId != null" >
+        device_id,
+      </if>
+      <if test="dataTypeId != null" >
+        data_type_id,
+      </if>
+      <if test="dataValue != null" >
+        data_value,
+      </if>
+      <if test="dateTime != null" >
+        date_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="stationId != null" >
+        #{stationId,jdbcType=INTEGER},
+      </if>
+      <if test="deviceId != null" >
+        #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="dataTypeId != null" >
+        #{dataTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="dataValue != null" >
+        #{dataValue,jdbcType=VARCHAR},
+      </if>
+      <if test="dateTime != null" >
+        #{dateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.upbest.model.PointData" >
+    update mg_point_data
+    <set >
+      <if test="stationId != null" >
+        station_id = #{stationId,jdbcType=INTEGER},
+      </if>
+      <if test="deviceId != null" >
+        device_id = #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="dataTypeId != null" >
+        data_type_id = #{dataTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="dataValue != null" >
+        data_value = #{dataValue,jdbcType=VARCHAR},
+      </if>
+      <if test="dateTime != null" >
+        date_time = #{dateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.upbest.model.PointData" >
+    update mg_point_data
+    set station_id = #{stationId,jdbcType=INTEGER},
+      device_id = #{deviceId,jdbcType=INTEGER},
+      data_type_id = #{dataTypeId,jdbcType=INTEGER},
+      data_value = #{dataValue,jdbcType=VARCHAR},
+      date_time = #{dateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectPointDataList" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from mg_point_data
+    <where>
+    	<if test="stationId != null" >
+        	and station_id = #{stationId,jdbcType=INTEGER}
+	    </if>
+	    <if test="deviceId != null" >
+	        and device_id = #{deviceId,jdbcType=INTEGER}
+	    </if>
+	    <if test="dataTypeId != null" >
+	        and data_type_id = #{dataTypeId,jdbcType=INTEGER}
+	    </if>
+	    <if test="dateTime != null" >
+	        and date_format(date_time,'%H:%i:%s') &lt;= #{dateTime}
+	    </if>
+    </where>
+    order by date_time desc
+  </select>
+  <select id="selectRealTimeData" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from mg_point_data
+    <where>
+    	<if test="stationId != null" >
+        	and station_id = #{stationId,jdbcType=INTEGER}
+	    </if>
+	    <if test="deviceId != null" >
+	        and device_id = #{deviceId,jdbcType=INTEGER}
+	    </if>
+	    <if test="dataTypeId != null" >
+	        and data_type_id = #{dataTypeId,jdbcType=INTEGER}
+	    </if>
+	    <if test="dateTime != null" >
+	        and date_format(date_time,'%H:%i:%s') &gt;= #{dateTime}
+	    </if>
+    </where>
+    order by date_time asc
+    limit 0,1
+  </select>
+</mapper>

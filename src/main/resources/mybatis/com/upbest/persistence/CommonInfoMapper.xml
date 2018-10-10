@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.upbest.persistence.CommonInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.upbest.model.CommonInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="station_id" property="stationId" jdbcType="INTEGER" />
+    <result column="total_power" property="totalPower" jdbcType="REAL" />
+    <result column="total_power_generation" property="totalPowerGeneration" jdbcType="REAL" />
+    <result column="city_elec_input_power" property="cityElecInputPower" jdbcType="REAL" />
+    <result column="storage_power_generation" property="storagePowerGeneration" jdbcType="REAL" />
+    <result column="esm_energy_storage" property="esmEnergyStorage" jdbcType="REAL" />
+    <result column="esm_dump_energy" property="esmDumpEnergy" jdbcType="REAL" />
+    <result column="esm_cycle_times" property="esmCycleTimes" jdbcType="INTEGER" />
+    <result column="esm_active_power" property="esmActivePower" jdbcType="REAL" />
+    <result column="esm_voltage" property="esmVoltage" jdbcType="REAL" />
+    <result column="esm_current" property="esmCurrent" jdbcType="REAL" />
+    <result column="esm_work_status" property="esmWorkStatus" jdbcType="INTEGER" />
+    <result column="esm_charge_status" property="esmChargeStatus" jdbcType="INTEGER" />
+    <result column="cd_total_charge_power" property="cdTotalChargePower" jdbcType="REAL" />
+    <result column="cd_total_charge" property="cdTotalCharge" jdbcType="REAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, station_id, total_power, total_power_generation, city_elec_input_power, storage_power_generation, 
+    esm_energy_storage, esm_dump_energy, esm_cycle_times, esm_active_power, esm_voltage, 
+    esm_current, esm_work_status, esm_charge_status, cd_total_charge_power, cd_total_charge
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from mg_common_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mg_common_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.upbest.model.CommonInfo" >
+    insert into mg_common_info (id, station_id, total_power, 
+      total_power_generation, city_elec_input_power, storage_power_generation, 
+      esm_energy_storage, esm_dump_energy, esm_cycle_times, 
+      esm_active_power, esm_voltage, esm_current, 
+      esm_work_status, esm_charge_status, cd_total_charge_power, 
+      cd_total_charge)
+    values (#{id,jdbcType=INTEGER}, #{stationId,jdbcType=INTEGER}, #{totalPower,jdbcType=REAL}, 
+      #{totalPowerGeneration,jdbcType=REAL}, #{cityElecInputPower,jdbcType=REAL}, #{storagePowerGeneration,jdbcType=REAL}, 
+      #{esmEnergyStorage,jdbcType=REAL}, #{esmDumpEnergy,jdbcType=REAL}, #{esmCycleTimes,jdbcType=INTEGER}, 
+      #{esmActivePower,jdbcType=REAL}, #{esmVoltage,jdbcType=REAL}, #{esmCurrent,jdbcType=REAL}, 
+      #{esmWorkStatus,jdbcType=INTEGER}, #{esmChargeStatus,jdbcType=INTEGER}, #{cdTotalChargePower,jdbcType=REAL}, 
+      #{cdTotalCharge,jdbcType=REAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.upbest.model.CommonInfo" >
+    insert into mg_common_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="stationId != null" >
+        station_id,
+      </if>
+      <if test="totalPower != null" >
+        total_power,
+      </if>
+      <if test="totalPowerGeneration != null" >
+        total_power_generation,
+      </if>
+      <if test="cityElecInputPower != null" >
+        city_elec_input_power,
+      </if>
+      <if test="storagePowerGeneration != null" >
+        storage_power_generation,
+      </if>
+      <if test="esmEnergyStorage != null" >
+        esm_energy_storage,
+      </if>
+      <if test="esmDumpEnergy != null" >
+        esm_dump_energy,
+      </if>
+      <if test="esmCycleTimes != null" >
+        esm_cycle_times,
+      </if>
+      <if test="esmActivePower != null" >
+        esm_active_power,
+      </if>
+      <if test="esmVoltage != null" >
+        esm_voltage,
+      </if>
+      <if test="esmCurrent != null" >
+        esm_current,
+      </if>
+      <if test="esmWorkStatus != null" >
+        esm_work_status,
+      </if>
+      <if test="esmChargeStatus != null" >
+        esm_charge_status,
+      </if>
+      <if test="cdTotalChargePower != null" >
+        cd_total_charge_power,
+      </if>
+      <if test="cdTotalCharge != null" >
+        cd_total_charge,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="stationId != null" >
+        #{stationId,jdbcType=INTEGER},
+      </if>
+      <if test="totalPower != null" >
+        #{totalPower,jdbcType=REAL},
+      </if>
+      <if test="totalPowerGeneration != null" >
+        #{totalPowerGeneration,jdbcType=REAL},
+      </if>
+      <if test="cityElecInputPower != null" >
+        #{cityElecInputPower,jdbcType=REAL},
+      </if>
+      <if test="storagePowerGeneration != null" >
+        #{storagePowerGeneration,jdbcType=REAL},
+      </if>
+      <if test="esmEnergyStorage != null" >
+        #{esmEnergyStorage,jdbcType=REAL},
+      </if>
+      <if test="esmDumpEnergy != null" >
+        #{esmDumpEnergy,jdbcType=REAL},
+      </if>
+      <if test="esmCycleTimes != null" >
+        #{esmCycleTimes,jdbcType=INTEGER},
+      </if>
+      <if test="esmActivePower != null" >
+        #{esmActivePower,jdbcType=REAL},
+      </if>
+      <if test="esmVoltage != null" >
+        #{esmVoltage,jdbcType=REAL},
+      </if>
+      <if test="esmCurrent != null" >
+        #{esmCurrent,jdbcType=REAL},
+      </if>
+      <if test="esmWorkStatus != null" >
+        #{esmWorkStatus,jdbcType=INTEGER},
+      </if>
+      <if test="esmChargeStatus != null" >
+        #{esmChargeStatus,jdbcType=INTEGER},
+      </if>
+      <if test="cdTotalChargePower != null" >
+        #{cdTotalChargePower,jdbcType=REAL},
+      </if>
+      <if test="cdTotalCharge != null" >
+        #{cdTotalCharge,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.upbest.model.CommonInfo" >
+    update mg_common_info
+    <set >
+      <if test="stationId != null" >
+        station_id = #{stationId,jdbcType=INTEGER},
+      </if>
+      <if test="totalPower != null" >
+        total_power = #{totalPower,jdbcType=REAL},
+      </if>
+      <if test="totalPowerGeneration != null" >
+        total_power_generation = #{totalPowerGeneration,jdbcType=REAL},
+      </if>
+      <if test="cityElecInputPower != null" >
+        city_elec_input_power = #{cityElecInputPower,jdbcType=REAL},
+      </if>
+      <if test="storagePowerGeneration != null" >
+        storage_power_generation = #{storagePowerGeneration,jdbcType=REAL},
+      </if>
+      <if test="esmEnergyStorage != null" >
+        esm_energy_storage = #{esmEnergyStorage,jdbcType=REAL},
+      </if>
+      <if test="esmDumpEnergy != null" >
+        esm_dump_energy = #{esmDumpEnergy,jdbcType=REAL},
+      </if>
+      <if test="esmCycleTimes != null" >
+        esm_cycle_times = #{esmCycleTimes,jdbcType=INTEGER},
+      </if>
+      <if test="esmActivePower != null" >
+        esm_active_power = #{esmActivePower,jdbcType=REAL},
+      </if>
+      <if test="esmVoltage != null" >
+        esm_voltage = #{esmVoltage,jdbcType=REAL},
+      </if>
+      <if test="esmCurrent != null" >
+        esm_current = #{esmCurrent,jdbcType=REAL},
+      </if>
+      <if test="esmWorkStatus != null" >
+        esm_work_status = #{esmWorkStatus,jdbcType=INTEGER},
+      </if>
+      <if test="esmChargeStatus != null" >
+        esm_charge_status = #{esmChargeStatus,jdbcType=INTEGER},
+      </if>
+      <if test="cdTotalChargePower != null" >
+        cd_total_charge_power = #{cdTotalChargePower,jdbcType=REAL},
+      </if>
+      <if test="cdTotalCharge != null" >
+        cd_total_charge = #{cdTotalCharge,jdbcType=REAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.upbest.model.CommonInfo" >
+    update mg_common_info
+    set station_id = #{stationId,jdbcType=INTEGER},
+      total_power = #{totalPower,jdbcType=REAL},
+      total_power_generation = #{totalPowerGeneration,jdbcType=REAL},
+      city_elec_input_power = #{cityElecInputPower,jdbcType=REAL},
+      storage_power_generation = #{storagePowerGeneration,jdbcType=REAL},
+      esm_energy_storage = #{esmEnergyStorage,jdbcType=REAL},
+      esm_dump_energy = #{esmDumpEnergy,jdbcType=REAL},
+      esm_cycle_times = #{esmCycleTimes,jdbcType=INTEGER},
+      esm_active_power = #{esmActivePower,jdbcType=REAL},
+      esm_voltage = #{esmVoltage,jdbcType=REAL},
+      esm_current = #{esmCurrent,jdbcType=REAL},
+      esm_work_status = #{esmWorkStatus,jdbcType=INTEGER},
+      esm_charge_status = #{esmChargeStatus,jdbcType=INTEGER},
+      cd_total_charge_power = #{cdTotalChargePower,jdbcType=REAL},
+      cd_total_charge = #{cdTotalCharge,jdbcType=REAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectCommonInfo" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from mg_common_info
+    <where>
+    	<if test="stationId != null" >
+        	and station_id = #{stationId,jdbcType=INTEGER}
+    	</if>
+    </where>
+  </select>
+</mapper>

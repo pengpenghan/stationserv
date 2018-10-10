@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.upbest.persistence.StationMapper" >
+  <resultMap id="BaseResultMap" type="com.upbest.model.Station" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="main_name" property="mainName" jdbcType="VARCHAR" />
+    <result column="prepare_name" property="prepareName" jdbcType="VARCHAR" />
+    <result column="logo_url" property="logoUrl" jdbcType="VARCHAR" />
+    <result column="longitude" property="longitude" jdbcType="DECIMAL" />
+    <result column="latitude" property="latitude" jdbcType="DECIMAL" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="station_type" property="stationType" jdbcType="INTEGER" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, main_name, prepare_name, logo_url, longitude, latitude, address, station_type, 
+    remarks, status, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from mg_station
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mg_station
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.upbest.model.Station" >
+    insert into mg_station (id, main_name, prepare_name, 
+      logo_url, longitude, latitude, 
+      address, station_type, remarks, 
+      status, create_time)
+    values (#{id,jdbcType=INTEGER}, #{mainName,jdbcType=VARCHAR}, #{prepareName,jdbcType=VARCHAR}, 
+      #{logoUrl,jdbcType=VARCHAR}, #{longitude,jdbcType=DECIMAL}, #{latitude,jdbcType=DECIMAL}, 
+      #{address,jdbcType=VARCHAR}, #{stationType,jdbcType=INTEGER}, #{remarks,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.upbest.model.Station" >
+    insert into mg_station
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="mainName != null" >
+        main_name,
+      </if>
+      <if test="prepareName != null" >
+        prepare_name,
+      </if>
+      <if test="logoUrl != null" >
+        logo_url,
+      </if>
+      <if test="longitude != null" >
+        longitude,
+      </if>
+      <if test="latitude != null" >
+        latitude,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="stationType != null" >
+        station_type,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="mainName != null" >
+        #{mainName,jdbcType=VARCHAR},
+      </if>
+      <if test="prepareName != null" >
+        #{prepareName,jdbcType=VARCHAR},
+      </if>
+      <if test="logoUrl != null" >
+        #{logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null" >
+        #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null" >
+        #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="stationType != null" >
+        #{stationType,jdbcType=INTEGER},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.upbest.model.Station" >
+    update mg_station
+    <set >
+      <if test="mainName != null" >
+        main_name = #{mainName,jdbcType=VARCHAR},
+      </if>
+      <if test="prepareName != null" >
+        prepare_name = #{prepareName,jdbcType=VARCHAR},
+      </if>
+      <if test="logoUrl != null" >
+        logo_url = #{logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null" >
+        longitude = #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null" >
+        latitude = #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="stationType != null" >
+        station_type = #{stationType,jdbcType=INTEGER},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.upbest.model.Station" >
+    update mg_station
+    set main_name = #{mainName,jdbcType=VARCHAR},
+      prepare_name = #{prepareName,jdbcType=VARCHAR},
+      logo_url = #{logoUrl,jdbcType=VARCHAR},
+      longitude = #{longitude,jdbcType=DECIMAL},
+      latitude = #{latitude,jdbcType=DECIMAL},
+      address = #{address,jdbcType=VARCHAR},
+      station_type = #{stationType,jdbcType=INTEGER},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getStationInfo" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from mg_station
+    <where>
+    	<if test="id != null" >
+	        and id = #{id,jdbcType=INTEGER}
+	    </if>
+    	<if test="mainName != null" >
+        	and main_name = #{mainName,jdbcType=VARCHAR}
+        </if>
+    	<if test="stationType != null" >
+        	and station_type = #{stationType,jdbcType=INTEGER}
+        </if>
+        <if test="status != null" >
+	        and status = #{status,jdbcType=INTEGER}
+	    </if>
+    </where>
+  </select>
+  <select id="getStationList" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+  	select 
+    <include refid="Base_Column_List" />
+    from mg_station
+    where status != -1
+   	<if test="mainName != null" >
+       	and main_name like concat(concat('%',#{mainName,jdbcType=VARCHAR}),'%')
+       </if>
+   	<if test="stationType != null" >
+       	and station_type = #{stationType,jdbcType=INTEGER}
+     </if>
+  </select>
+  <update id="updataStationStatus" parameterType="java.util.HashMap">
+  	update mg_station
+  	set status = #{status,jdbcType=INTEGER}
+  	<where>
+  		<if test="deleteIds != null and deleteIds.length > 0">
+  			and id in
+  			<foreach collection="deleteIds" item="item" open="(" separator="," close=")">
+  				#{item}
+  			</foreach>
+  		</if>
+  	</where>
+  </update>
+</mapper>

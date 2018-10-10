@@ -1,0 +1,158 @@
+/*公用(带上划线导航TAB)*/
+.line_nav_tab {
+	width: 98%;
+	margin: 6px auto 0px auto;
+}
+
+.line-tabs-nav, .line-tabs-panel {
+	font-family: "Trebuchet MS", Trebuchet, Verdana, Helvetica, Arial,
+		sans-serif;
+	font-size: 12px;
+}
+
+.line-tabs-nav {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 4px;
+}
+
+.line-tabs-nav:after {
+	/* clearing without presentational markup, IE gets extra treatment */
+	display: block;
+	clear: both;
+}
+
+.line-tabs-nav li {
+	float: left;
+	margin: 0 0 0 1px;
+	/*min-width: 84px;  be nice to Opera */
+}
+
+.line-tabs-nav a, .line-tabs-nav a span {
+	display: block;
+	padding: 0 10px;
+	background: url(../images/line_nav_tab_bg.png) no-repeat;
+}
+
+.line-tabs-nav a {
+	margin: 1px 0 0;
+	/* position: relative makes opacity fail for disabled tab in IE */
+	padding-left: 0;
+	color: #333333;
+	line-height: 1.2;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap; /* required in IE 6 */
+	outline: 0; /* prevent dotted border in Firefox */
+}
+
+.line-tabs-nav .line-tabs-selected a {
+	position: relative;
+	top: 1px;
+	z-index: 2;
+	margin-top: 0;
+	color: #000;
+}
+
+.line-tabs-nav a span {
+	width: 50px; /* IE 6 treats width as min-width */
+	min-width: 50px;
+	height: 18px; /* IE 6 treats height as min-height */
+	min-height: 18px;
+	padding-top: 6px;
+	padding-right: 0;
+}
+
+*>.line-tabs-nav a span { /* hide from IE 6 */
+	width: auto;
+	height: auto;
+}
+
+.line-tabs-nav .line-tabs-selected a span {
+	padding-bottom: 1px;
+}
+
+.line-tabs-nav .line-tabs-selected a, .line-tabs-nav a:hover,
+	.line-tabs-nav a:focus, .line-tabs-nav a:active {
+	background-position: 100% -150px;
+}
+
+.line-tabs-nav a, .line-tabs-nav .line-tabs-disabled a:hover,
+	.line-tabs-nav .line-tabs-disabled a:focus, .line-tabs-nav .line-tabs-disabled a:active
+	{
+	background-position: 100% -100px;
+}
+
+.line-tabs-nav .line-tabs-selected a span, .line-tabs-nav a:hover span,
+	.line-tabs-nav a:focus span, .line-tabs-nav a:active span {
+	background-position: 0 -50px;
+}
+
+.line-tabs-nav a span, .line-tabs-nav .line-tabs-disabled a:hover span,
+	.line-tabs-nav .line-tabs-disabled a:focus span, .line-tabs-nav .line-tabs-disabled a:active span
+	{
+	background-position: 0 0;
+}
+
+.line-tabs-nav .line-tabs-selected a:link, .line-tabs-nav .line-tabs-selected a:visited,
+	.line-tabs-nav .line-tabs-disabled a:link, .line-tabs-nav .line-tabs-disabled a:visited
+	{ /* @ Opera, use pseudo classes otherwise it confuses cursor... */
+	cursor: text;
+}
+
+.line-tabs-nav a:hover, .line-tabs-nav a:focus, .line-tabs-nav a:active
+	{ /* @ Opera, we need to be explicit again here now... */
+	cursor: pointer;
+}
+
+.line-tabs-disabled {
+	opacity: .4;
+	filter: alpha(opacity = 40);
+}
+
+.line-tabs-panel {
+	border-top: 1px solid #97a5b0;
+	padding: 1em 8px;
+	background: #fff;
+	/* declare background color for container to avoid distorted fonts in IE while fading */
+	clear: both;
+}
+
+.line-tabs-loading em {
+	padding: 0 0 0 20px;
+	background: url(../images/loading.gif) no-repeat 0 50%;
+}
+
+/* Additional IE specific bug fixes... */
+* html .line-tabs-nav { /* auto clear, @ IE 6 & IE 7 Quirks Mode */
+	display: inline-block;
+}
+
+*:first-child+html .line-tabs-nav {
+	/* @ IE 7 Standards Mode - do not group selectors, otherwise IE 6 will ignore complete rule (because of the unknown + combinator)... */
+	display: inline-block;
+	.
+	content_table
+	{
+	width
+	:
+	100%;
+}
+
+.content_table td img {
+	cursor: pointer;
+}
+
+.content_table tr.title td {
+	color: #666666;
+	font-weight: bold;
+	height: 23px;
+	background: url(../images/home/content_title_bg.gif);
+	text-align: center;
+}
+
+.content_table td {
+	height: 23px;
+	border-bottom: #E3E3E3 1px solid;
+	text-align: left;
+}

@@ -1,0 +1,44 @@
+﻿.my-menu, .my-col-xs-1, .my-col-padding, .chat-title-active, .col-xs-3 .panel-default>.panel-heading,
+	.collapse, .h5-active, .jczz {
+	background-color: #F23A3A
+}
+
+.dz-margin a small, .dzcy-leader a small {
+	background-color: #F23A3A
+}
+
+.dz-border {
+	border-top: #F23A3A solid 1px;
+}
+
+.mid-top {
+	border-top: #F23A3A solid 1px;
+}
+
+a {
+	color: #707070
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #F23A3A
+}
+
+.col-xs-6 ul li a:hover, ul li small a:hover, dl dt strong a:hover,
+	.col-xs-2 dl dt h5 a:hover, .col-xs-10 .col-xs-6 a:hover, .slick-slider h4:hover,
+	.p-left h4:hover, dl dt h4:hover {
+	color: #F23A3A;
+	text-decoration: underline
+}
+
+.my-col-xs-left {
+	border-left: #F23A3A solid 3px
+}
+
+.my-navbar a {
+	color: #fff
+}
+
+.my-navbar, .col-xs-3 ul, .my-col-xs-10, .col-xs-zzyd {
+	background-color: #F23A3A
+}

@@ -1,0 +1,50 @@
+﻿/* CSS Document */
+body {
+	background-color: #169AF0;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.input {
+	width: 158px;
+	height: 18px;
+	border: #1E8CBB solid 1px;
+	padding-left: 3px;
+	padding-right: 3px;
+	font-family: "Tahoma", "宋体", "Arial", "Verdana";
+	font-size: 12px;
+}
+
+.table0 {
+	width: 618px;
+	height: 311px
+}
+
+.table-left {
+	width: 240px;
+}
+
+.table-left .td1 {
+	width: 150px;
+}
+
+.table-right {
+	width: 250px;
+}
+
+.table-right .td {
+	width: 73px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #04A0D9;
+}
+
+.botton-text {
+	font: "宋体";
+	color: #1AB7EE;
+	font-size: 12px;
+	text-align: right
+}

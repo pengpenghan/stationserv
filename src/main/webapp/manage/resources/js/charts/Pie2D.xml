@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='gb2312'?>
+<chart palette='4' baseFontSize='12' outCnvBaseFontSize='12'>
+	<set label="入党积级分子" value="45" />
+	<set label="共青团员" value="52" />
+	<set label="发展对象" value="24" />
+	<set label="群众" value="150" />
+</chart> 

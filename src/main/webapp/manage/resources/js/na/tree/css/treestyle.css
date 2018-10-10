@@ -1,0 +1,132 @@
+.natree {
+	cursor: default;
+	overflow: auto;
+}
+
+.natree ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px 0px 0px 12px;
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+.natree ul li {
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	line-height: 19px;
+	width: auto;
+	clear: both;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+/* 根节点的css */
+.natree .rootFolder {
+	position: relative;
+	width: 16px;
+	float: left;
+	cursor: pointer;
+	height: 16px;
+}
+
+.natree .rootOpenFolder {
+	background-image: url("../images/rootOpenFolder.gif");
+}
+
+.natree .rootClosedFolder {
+	background-image: url("../images/rootClosedFolder.gif");
+}
+
+/* 普通节点单击开关的的css */
+
+/* 开关 */
+.natree .switch {
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: 0px 4px;
+	width: 8px;
+	margin-right: 1px;
+	float: left;
+	cursor: pointer;
+	height: 16px;
+}
+/* 关闭的开关 */
+.natree .switchClosed {
+	background-image: url("../images/switchClosed.gif");
+}
+/* 获取焦点的关闭的开关 */
+.natree .switchClosedFocus {
+	background-image: url("../images/switchClosedFocus.gif");
+}
+/* 打开的开关 */
+.natree .switchOpen {
+	background-image: url("../images/switchOpen.gif");
+}
+/* 获取焦点的打开的开关 */
+.natree .switchOpenFocus {
+	background-image: url("../images/switchOpenFocus.gif");
+}
+
+/* 文件夹 */
+.natree .folder {
+	position: relative;
+	width: 16px;
+	float: left;
+	cursor: pointer;
+	height: 18px;
+	background-image: url("../images/node.gif");
+	background-position: 0px 2px;
+	background-repeat: no-repeat;
+}
+
+.natree .openFolder {
+	background-image: url("../images/folderOpen.gif");
+}
+
+.natree .closedFolder {
+	background-image: url("../images/folderClose.gif");
+}
+
+/* 选中的节点 */
+.natree .hoveringNode {
+	background-color: silver;
+}
+
+.natree .selectNode {
+	background-color: yellow;
+}
+
+.natree .value {
+	margin-left: 6px;
+	text-indent: 16px;
+	position: relative;
+	cursor: pointer;
+}
+
+.natree input {
+	background-position: 0px 10px;
+}
+
+.natree a:link {
+	text-decoration: none;
+	color: #000000;
+}
+
+.natree a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+.natree a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+.natree #dragNodeDiv {
+	position: absolute;
+	display: block;;
+	background-color: red;
+	width: 40px;
+	height: 30px;
+}

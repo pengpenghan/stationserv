@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.upbest.persistence.SysUserMapper" >
+  <resultMap id="BaseResultMap" type="com.upbest.model.SysUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_pwd" property="userPwd" jdbcType="VARCHAR" />
+    <result column="pwd_sign" property="pwdSign" jdbcType="VARCHAR" />
+    <result column="real_name" property="realName" jdbcType="VARCHAR" />
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="error_count" property="errorCount" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="VARCHAR" />
+    <association column="role_id" property="role" select="com.upbest.persistence.SysRoleMapper.selectByPrimaryKey" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_name, user_pwd, pwd_sign, real_name, role_id, status, error_count, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sys_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.upbest.model.SysUser" >
+    insert into sys_user (id, user_name, user_pwd, 
+      pwd_sign, real_name, role_id, 
+      status, error_count, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR}, 
+      #{pwdSign,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{errorCount,jdbcType=INTEGER}, #{createTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.upbest.model.SysUser" >
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="userPwd != null" >
+        user_pwd,
+      </if>
+      <if test="pwdSign != null" >
+        pwd_sign,
+      </if>
+      <if test="realName != null" >
+        real_name,
+      </if>
+      <if test="roleId != null" >
+        role_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="errorCount != null" >
+        error_count,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null" >
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdSign != null" >
+        #{pwdSign,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="errorCount != null" >
+        #{errorCount,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.upbest.model.SysUser" >
+    update sys_user
+    <set >
+      <if test="userName != null" >
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null" >
+        user_pwd = #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdSign != null" >
+        pwd_sign = #{pwdSign,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null" >
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null" >
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="errorCount != null" >
+        error_count = #{errorCount,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.upbest.model.SysUser" >
+    update sys_user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      user_pwd = #{userPwd,jdbcType=VARCHAR},
+      pwd_sign = #{pwdSign,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      role_id = #{roleId,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      error_count = #{errorCount,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="listUserByCondition" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    select u.* from sys_user u
+    left join sys_role r on u.role_id = r.id
+    where u.status != -1
+    <if test="userName != null">
+        and u.user_name like concat(concat('%',#{userName,jdbcType=VARCHAR}),'%') 
+    </if>
+    <if test="roleId != null" >
+        and r.id = #{roleId,jdbcType=INTEGER}
+    </if>
+    order by CREATE_TIME desc
+  </select>
+  <select id="getUserInfo" parameterType="java.util.HashMap" resultMap="BaseResultMap">
+    select * from  sys_user WHERE 1=1
+       <if test="userName != null">
+        and user_name  = #{userName,jdbcType=VARCHAR} 
+       </if>
+       <if test="status != null" >
+        and status = #{status,jdbcType=INTEGER}
+      </if>
+      <if test="id != null" >
+        and id = #{id,jdbcType=INTEGER}
+      </if>
+  </select>
+  <update id="updataUserStatus" parameterType="java.util.HashMap">
+  	update sys_user
+  	set status = #{status,jdbcType=INTEGER}
+  	<where>
+  		<if test="deleteIds != null and deleteIds.length > 0">
+  			and id in
+  			<foreach collection="deleteIds" item="item" open="(" separator="," close=")">
+  				#{item}
+  			</foreach>
+  		</if>
+  	</where>
+  </update>
+</mapper>

@@ -1,0 +1,123 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>向指定的节点追加子节点</title>
+
+<link href="../../../../resources/skin_default/css/style.css"
+	rel="stylesheet" type="text/css" />
+
+<!-- jquery1.4.2 -->
+<script type="text/javascript"
+	src="../../../../resources/jquery/jquery-1.4.2.min.js"></script>
+
+<!-- tree -->
+<link href="../../../../resources/jquery/na/tree/css/style.css"
+	rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+	src="../../../../resources/jquery/na/tree/jquery.na.tree.js"></script>
+<!--初始化tree的js -->
+<script type="text/javascript">
+	$(function()
+		{
+			$("#myTree").natree({
+			        rootId:"Root_myTree",
+					rootName : "公司资料",
+						async:true
+						
+				});
+			
+			
+			$("#myTree").setTreeData($("#jsonText").text());
+
+		}
+	);
+
+
+	function appendTree()
+	{
+		$("#myTree").setTreeData($("#jsonTextappend").text(),"node3");
+	}
+
+
+/**
+	*异步加载子节点需要实现此方法,方法名不能变更(必须使用树的id+"_nodeValueClick"方式)。
+	
+	*/
+	function myTree_addChildNode(parentId,params,nodeName)
+	{
+		//构建json数据
+		var subnode1=parentId+"_01";
+		var subnode2=parentId+"_02";
+		str ='[{"parentId":"'+parentId+'","id":"'+subnode1+'","name":"异步加载的节点1"},{"parentId":"'+parentId+'","id":"'+subnode2+'","name":"异步加载的节点2"}]';
+
+		//还是调用setTreeData方法,需要指明加载的父节点为当前的Id
+		$("#myTree").setTreeData(str,parentId);
+	}
+	
+		
+</script>
+
+</head>
+<body id="menu_body">
+	<table class="main_table">
+		<tr class="head no_bottom_line">
+			<td><div class="toolbar_align_left">
+					<span class="ico_title">追加子节点</span>
+				</div></td>
+		</tr>
+	</table>
+
+	<!-- 功能说明区 -->
+	<table class="form_table">
+		<tr>
+			<td class="texts"
+				style="color: red; text-align: left; text-indent: 24px;">
+				追加子节点示例，示例主要展现的功能要点有: 1. 可以为整个tree追加子节点 2. 可以对指定的节点追加子节点。</td>
+
+		</tr>
+	</table>
+	<table class="footer_table">
+		<tr class="toolbar">
+			<td>
+				<div class="toolbar_align_right" style="width: 100%; padding: 4px;">
+					<ul class="ico_btn right">
+						<li><a href="###" onClick="appendTree()"><span><i
+									class="btn_ico_new">为节点3追加子节点tree</i></span></a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<div id="myTree" class="natree"
+		style="width: auto; height: auto; overflow: auto;"></div>
+
+	<textarea id="jsonText" rows="5" cols="100" style="display: none">
+		[
+		{"parentId":"Root_myTree","id":"node1","name":"节点1"},
+		{"parentId":"Root_myTree","id":"node2","name":"节点2"},
+		{"parentId":"Root_myTree","id":"node3","name":"节点3"},
+		{"parentId":"node1","id":"sub_node1_1","name":"节点1_1"},
+		{"parentId":"node1","id":"sub_node1_2","name":"节点1_2"},
+		{"parentId":"node2","id":"sub_node2_1","name":"节点2_1"},
+	    {"parentId":"sub_node2_1","id":"sub_node2_1_1","name":"节点2_1_1"},
+	    {"parentId":"sub_node2_1","id":"sub_node2_1_2","name":"节点2_1_2"}
+	]
+	
+	</textarea>
+
+
+	<textarea id="jsonTextappend" rows="5" cols="100" style="display: none">
+		[
+		{"parentId":"node3","id":"sub_node3_1","name":"节点3_1"},
+		{"parentId":"node3","id":"sub_node3_2","name":"节点3_2"},
+		{"parentId":"node3","id":"sub_node3_3","name":"节点3_3"},
+		{"parentId":"sub_node3_3","id":"sub_node3_3_1","name":"节点3_3_1"},
+		{"parentId":"sub_node3_3","id":"sub_node3_3_2","name":"节点3_3_2"}
+		]
+	
+	</textarea>
+
+</body>
+</html>

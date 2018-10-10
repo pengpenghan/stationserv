@@ -1,0 +1,186 @@
+.search{
+	margin-top: 4px;
+	margin-left: 20px;
+    min-height: 25px;
+    height: auto;
+    width: 97.55%;
+    padding-left: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 1px solid ##f5f5f5;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    behavior: url(ie-css3.htc);
+    background: #f5f5f5;
+    margin-bottom: 4px;
+    vertical-align:middle;
+}
+.search .dl2 {
+    display: inline;
+    height: 20px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+.search .dl2 dt {
+	margin-left: 16px;
+    width: 50px;
+    font-size: 13px;
+    color: #3a3521;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 10px;
+    display:inline-block;
+    text-align:right;
+}
+.search .dl2 dd {
+    display:inline-block;
+    height: 20px;
+    width: 120px;
+    line-height: 20px;
+}
+.search .dl2 dd input {
+    height: 28px;
+    width: 141px;
+    line-height: 20px;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    behavior: url(ie-css3.htc);
+    padding-left: 7px;
+    font-size: 12px;
+    color: #74798b;
+}
+
+.search .btn {
+    border: 0;
+}
+.search .btn {
+    display: inline-block;
+    color: #FFF !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+    background-image: none !important;
+    border: 0px solid #FFF;
+    border-radius: 0;
+    box-shadow: none !important;
+    -webkit-transition: all ease .15s;
+    transition: all ease .15s;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 20px;
+    position: relative;
+}
+/*��ҳ�±߿�������*/
+.footer {
+    height: 0;
+    width: 0;
+}
+
+/*��ҳ���е���*/
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+.search .advpics{
+	display:block;
+	margin-bottom:28px;
+}
+.search .advpics dt{
+	margin-left:0;
+}
+.fileChoose {
+    position: relative;
+    display: inline-block;
+    font-size: 12px;
+    color: #666;
+    width: 62px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    behavior: url(ie-css3.htc);
+    background: #fff;
+}
+.fileChoose input {
+    position: absolute;
+    font-size: 16px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.btn>[class*="icon-"] {
+    display: inline;
+    margin-right: 4px;
+}
+.bigger-110 {
+    font-size: 110%;
+}
+[class*=" icon-"], [class^="icon-"] {
+    display: inline-block;
+    text-align: center;
+}
+[class^="icon-"], [class*=" icon-"] {
+    display: inline;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    vertical-align: baseline;
+    background-image: none;
+    background-position: 0% 0%;
+    background-repeat: repeat;
+    margin-top: 0;
+}
+[class^="icon-"], [class*=" icon-"] {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+* {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*��ҳ ��ѯ�� ������ʾ*/
+.dataTables_wrapper .dataTables_processing{
+	line-height:3px;
+}
+user agent stylesheet
+i, cite, em, var, address, dfn {
+    font-style: italic;
+}
+
+
+/*欢迎登录字体样式*/
+.loginWelcome{
+	position:absolute;
+	left:33%;
+	top: 77%;
+    text-align: left;
+}
+.loginWelcome .welcomeLogin{
+	font-size: 52px;
+    color: #E48917;
+}
+
+.loginWelcome .welocmeTitle{
+	font-size: 40px;
+    color: #058ED4;
+}
+

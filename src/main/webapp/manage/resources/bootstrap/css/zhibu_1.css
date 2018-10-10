@@ -1,0 +1,457 @@
+.my-navbar-default {
+	background-color: #f8f8f8;
+}
+
+.my-navbar {
+	position: relative;
+	min-height: 30px;
+
+	/*border: 1px solid transparent;*/
+}
+
+.my-navbar-brand {
+	float: left;
+	height: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	color: gray;
+}
+
+.navbar-nav>li>a {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.my-container {
+	/* padding-right: 15px; */
+	/* padding-left: 15px; */
+	margin-right: auto;
+	margin-left: auto;
+	width: 990px;
+}
+
+.collapse {
+	background-color: #F23A3A;
+	min-height: 40px;
+}
+
+.my-navbar-nav {
+	margin: 7.5px -15px;
+}
+
+.my-navbar-nav li a {
+	font-size: 16px;
+	color: white;
+	font-weight: bold;
+}
+
+dl dt h5  a:visited {
+	text-decoration: none;
+}
+
+.nav>li>a {
+	position: relative;
+	display: block;
+	padding: 5px 25px;
+}
+
+.row {
+	margin-top: 10px;
+}
+
+.h4, h4 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 0px;
+}
+
+.my-h4 {
+	margin-top: 15px;
+}
+
+.h4-center {
+	text-align: center;
+}
+
+.col-xs-6 {
+	padding-right: 5px;
+	padding-left: 0px;
+}
+
+.col-xs-9 {
+	padding-right: 10px;
+	padding-left: 0px;
+}
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-12,
+	.col-xs-10, .col-xs-11 {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.row {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+dt {
+	padding-left: 5px;
+	font-weight: 100;
+}
+
+hr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 0;
+	border-top: 1px solid #eee;
+}
+
+strong a {
+	color: gray;
+	text-decoration: none;
+}
+
+.col-xs-3 ul {
+	background-color: #F7F7F7;
+	border-top: #F23A3A solid 1px;
+}
+
+.col-xs-3 ul {
+	padding-left: 0px;
+	list-style: none;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+ul li a {
+	color: #333;
+}
+
+.col-xs-3 ul li {
+	border-bottom: black dashed 1px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.carousel-inner {
+	position: relative;
+	width: 94%;
+	overflow: hidden;
+}
+
+.col-xs-1 {
+	/*width: 3%;
+	padding-top: 65px;*/
+	
+}
+
+.my-col-xs-10 {
+	background-color: #F1F1F1;
+}
+
+.my-col-padding {
+	margin-top: 5px;
+	background-color: #F23A3A;
+}
+
+.my-col-xs-2 {
+	padding-left: 2%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.my-col-xs-12-a {
+	height: 79.5px;
+	background-color: #E50112;
+}
+
+.my-col-xs-12 {
+	height: 79.5px;
+	background-color: #A2A2A2;
+}
+
+.a-center {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.a-center-active {
+	font-size: 20px;
+	color: #FDFA00;
+}
+
+.a-center-disabled {
+	font-size: 20px;
+	color: white;
+}
+
+.col-xs-zzyd {
+	margin-top: 10px;
+	background-color: #F1F1F1;
+}
+
+.col-xs-zzyd h4 {
+	margin-top: 10px;
+	margin-bottom: 0px;
+	padding-left: 10px;
+}
+
+.my-col-xs-left {
+	background-color: white;
+	border-left: #F23A3A solid 3px;
+}
+
+.col-xs-2 dl dt {
+	border-bottom: #DADADA solid 1px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.col-xs-10 .col-xs-6 ul li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.col-xs-6 ul li a {
+	color: #707070;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+.col-xs-3 ul li a, p {
+	color: #707070;
+	text-decoration: none;
+}
+
+.my-foot-6 {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.my-foot-12 {
+	marging-top: 20px;
+	min-height: 50px;
+	background-color: #EBEBEB;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.col-xs-9-1 {
+	width: 91%
+}
+
+a {
+	color: #707070;
+}
+
+.mid-col-xs-12 {
+	background-color: #E50112;
+	margin-top: 15px;
+}
+
+.mid-col-xs-12 ul {
+	padding-top: 10px;
+}
+
+.mid-col-xs-12 ul li a {
+	color: white;
+	font-weight: bold;
+}
+
+.my-p-padding {
+	margin-bottom: 50px;
+}
+
+a:hover {
+	color: #E50112;
+}
+
+.col-xs-6 ul li a:hover, ul li small a:hover, dl dt strong a:hover, dl dt h5 a:hover
+	{
+	color: #E50112;
+	text-decoration: none;
+}
+
+.col-xs-2 dl {
+	border-right: #DADADA solid 1px;
+	border-left: #DADADA solid 1px;
+}
+
+h5 {
+	text-align: center;
+	/*padding-right:10px;*/
+}
+/*党组*/
+.dz-margin-left {
+	margin-left: 8%;
+}
+
+.dzcy-leader a img, .dzcy-leader a small {
+	margin-left: 34%;
+	text-align: center;
+}
+
+.dzcy {
+	background-color: #F7F7F7;
+}
+
+.dzcy-leader a small {
+	background-color: rgb(242, 58, 58);
+	color: white;
+	width: 34.3%;
+}
+
+.dz-margin {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.dz-margin a small {
+	background-color: rgb(242, 58, 58);
+	color: white;
+	width: 83%;
+}
+
+.small-margin {
+	margin-left: 12%;
+}
+
+.dz-border-lr {
+	border-right: #DADADA solid 1px;
+	border-left: #DADADA solid 1px;
+	border-bottom: #DADADA solid 1px;
+}
+
+.dz-border {
+	border-top: #F23A3A solid 1px;
+}
+
+.dz-border-bottom {
+	margin-top: 5px;
+	border-bottom: #DADADA solid 1px;
+}
+
+.col-xs-offset-1 {
+	margin-left: 5%;
+}
+
+.my-col-xs-1 {
+	width: 4%;
+	font-size: 20px;
+	background-color: #F23A3A;
+	padding-top: 20px;
+	padding-left: 5px;
+	color: white;
+}
+
+.my-col-xs-11 {
+	width: 96%;
+}
+
+.jczz-back {
+	background-color: rgb(255, 225, 158);
+}
+
+.my-border {
+	border: white solid 1px;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.h5-active {
+	color: #F23A3A;
+}
+
+.jczz {
+	width: 4%;
+	font-size: 20px;
+	background-color: #F23A3A;
+	padding-top: 10px;
+	padding-left: 5px;
+	color: white;
+}
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: none;
+}
+
+.panel-default>.panel-heading {
+	color: white;
+	background-color: #F23A3A;
+	text-align: center;
+	font-weight: bold;
+	/* border-color: #ddd; */
+}
+
+.panel-title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 16px;
+	color: inherit;
+	font-weight: bold;
+}
+
+.p-left {
+	padding-left: 20px;
+}
+
+.m-top {
+	margin-top: 20px;
+}
+
+.t-center {
+	text-align: center;
+}
+
+.t-indent {
+	text-indent: 2em;
+}
+
+.b-none {
+	border: none;
+}
+
+.panel-body {
+	background-color: #F7F7F7;;
+}
+
+.panel-body .col-xs-6, .panel-body .col-xs-12 {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.mid-img {
+	padding-top: 5px;
+	padding-right: 5px;
+}
+
+.chat-title {
+	padding-top: 100px;
+	height: 50%;
+	text-align: center;
+	background-color: #DADADA;
+	color: white;
+	font-weight: bold;
+}
+
+.chat-title a {
+	color: white;
+}
+
+.chat-title-active {
+	background-color: #F23A3A;
+}
+
+.col-xs-10 .col-xs-6 {
+	padding-left: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

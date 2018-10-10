@@ -1,0 +1,18 @@
+* {
+	margin: 0;
+}
+
+.bg {
+	position: absolute;
+}
+
+.top {
+	position: absolute;
+	top: 0;
+}
+
+.anniu {
+	position: absolute;
+	z-index: 14;
+	top: 470px;
+}

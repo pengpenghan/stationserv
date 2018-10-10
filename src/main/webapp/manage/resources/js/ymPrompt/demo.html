@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://www.scriptlover.com/controls/prompt/ -->
+<HTML>
+<HEAD>
+<TITLE>ymPrompt消息提示组件4.0版DEMO演示及使用简介</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=GBK">
+<SCRIPT src="ymPrompt.js" type=text/javascript></SCRIPT>
+<LINK id=skin href="skin/black/ymPrompt.css" type=text/css
+	rel=stylesheet>
+
+<META>
+</HEAD>
+<BODY>
+	<TABLE class=table cellSpacing=0 cellPadding=3 width="100%"
+		height="100%">
+		<tr>
+			<TD><INPUT
+				onClick="ymPrompt.win('http://www.qq.com',500,300,'腾讯QQ官方网站',null,null,null,true)"
+				type=button value=iframe弹窗></TD>
+			<TD class=code>
+				ymPrompt.win('http://www.qq.com',500,300,'腾讯QQ官方网站',null,null,null,true)
+				<br>
+				onclick="ymPrompt.win({message:'../SystemSetup/SystemAffice/ShowContent.aspx?Code=<%#
+				Eval("ID") %>',width:500,height:400,title:'详细内容',iframe:true})"
+			</TD>
+		</tr>
+	</TABLE>
+</BODY>
+</HTML>

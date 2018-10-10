@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>悠扬管理后台</title>
+
+<meta name="description" content="overview &amp; stats" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<script type="text/javascript" src="resources/js/publicCss.js"></script>
+<script type="text/javascript" src="resources/js/header.js"></script>
+</head>
+
+<body class="no-skin">
+<script src="header.js"></script>
+	<div class="main-container ace-save-state" id="main-container">
+		<script type="text/javascript">
+				try{ace.settings.loadState('main-container')}catch(e){}
+			</script>
+		<div id="sidebar"  class="sidebar  responsive  ace-save-state">
+			<script type="text/javascript">
+					try{ace.settings.loadState('sidebar')}catch(e){}
+				</script>
+
+
+			<ul class="nav nav-list">
+				<li><a href="index.html"> <i class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
+							首页 </span>
+				</a> <b class="arrow"></b></li>
+
+				<li class="active open"><a href="#" class="dropdown-toggle"> <i
+						class="menu-icon fa fa-desktop"></i> <span class="menu-text">
+							系统设置 </span> <b class="arrow fa fa-angle-down"></b>
+				</a> <b class="arrow"></b>
+
+					<ul class="submenu">
+						<li class="active open"><a href="#" class="dropdown-toggle"> <i
+								class="menu-icon fa fa-caret-right"></i> 用户管理 <b
+								class="arrow fa fa-angle-down"></b>
+						</a> <b class="arrow"></b>
+
+							<ul class="submenu">
+								<!-- <li class=""><a href="userType.html"> <i
+										class="menu-icon fa fa-caret-right"></i> 类型管理
+								</a> <b class="arrow"></b></li> -->
+								<li class="active"><a href="roleList.html"> <i
+										class="menu-icon fa fa-caret-right"></i> 角色管理
+								</a> <b class="arrow"></b></li>
+								<!-- <li class=""><a href="power.html"> <i
+										class="menu-icon fa fa-caret-right"></i> 权限管理
+								</a> <b class="arrow"></b></li> -->
+
+								<li class=""><a href="userList.html"> <i
+										class="menu-icon fa fa-caret-right"></i> 用户列表
+								</a> <b class="arrow"></b></li>
+							</ul></li>
+
+						<li class=""><a href="stationList.html"> <i
+								class="menu-icon fa fa-caret-right"></i> 站点列表
+						</a> <b class="arrow"></b></li>
+					</ul></li>	
+
+
+			</ul>
+			<!-- /.nav-list -->
+
+			<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+				<i id="sidebar-toggle-icon"
+					class="ace-icon fa fa-angle-double-left ace-save-state"
+					data-icon1="ace-icon fa fa-angle-double-left"
+					data-icon2="ace-icon fa fa-angle-double-right"></i>
+			</div>
+		</div>
+		<div class="main-content">
+			<div class="main-content-inner">
+				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">系统设置</a>
+						</li>
+						<li class="active">用户管理-角色管理</li>
+					</ul>
+					<!-- /.breadcrumb -->
+<!-- 
+					<div class="nav-search" id="nav-search">
+						<form class="form-search">
+							<span class="input-icon"> <input type="text"
+								placeholder="Search ..." class="nav-search-input"
+								id="nav-search-input" autocomplete="off" /> <i
+								class="ace-icon fa fa-search nav-search-icon"></i>
+							</span>
+						</form>
+					</div> -->
+					<!-- /.nav-search -->
+				</div>
+
+				<div class="page-content">
+
+					<!-- /.page-header -->
+					<div class="search" style="min-height: 25px;">
+			            <dl class="dl2" style="width:auto;">
+							<dt style="width:65px;">角色名称:</dt>
+							<dd style="width:auto;">
+								<input name="role_name" id="role_name"  type="text" value="">
+							</dd>
+						</dl>
+						<button class="btn btn-info" type="button"  onclick="query()">
+							<i class="icon-search nav-search-icon"></i>查询
+						</button>
+						<button class="btn btn-info" type="button"  onclick="javascript:window.location.href='operateRole.html'">
+							<i class="icon-plus nav-search-icon"></i>新增角色
+						</button>
+					</div>
+
+					<div class="page-content">
+						<div class="row">
+							<div class="col-xs-12">
+
+								<div class="table-responsive">
+
+									<table id="sample-table-1"
+										class="table table-striped table-bordered table-hover">
+										<thead>
+											<tr>
+												<th>
+													<input type="checkbox" onClick="selectAllCheck(this, 'selecteditems');">
+												</th>
+												<th class="">名称</th>
+												<th class="">级别</th>
+												<th class="">角色说明</th>
+												<th class="">时间</th>
+												<th class="">操作</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<!-- /.table-responsive -->
+								<div>
+									<button class="btn btn-info" type="button" onclick="deleteRole();">
+										<i class="icon-remove nav-search-icon"></i>删除所选
+									</button>
+								</div>
+							</div>
+							<!-- /span -->
+						</div>
+					</div>
+					<!-- /.page-content -->
+
+				</div>
+			</div>
+		</div>
+		<!-- /.main-content -->
+
+<script src="footer.js"></script>
+		<a href="#" id="btn-scroll-up"
+			class="btn-scroll-up btn btn-sm btn-inverse"> <i
+			class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+		</a>
+	</div>
+<script src="resources/js/public.js"></script>
+<script src="resources/role/roleList.js"></script>
+<script src="resources/js/checkBoxAll.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+/* CSS Document */
+body {
+	padding: 0px;
+	margin: 0px;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif, "����";
+	background-color: #BC0000;
+}
+
+.main_body {
+	width: 765px;
+	height: 621px;
+	margin: 64px auto 0px auto;
+}
+
+.right_bg {
+	background-image: url(right_bg.jpg);
+	width: 372px;
+	height: 621px;
+}
+
+.right_div {
+	width: 300px;
+	height: 200px;
+	margin: 100px auto 0px auto;
+}
+
+.right_tb {
+	height: 30px
+}
+
+.right_tb td {
+	height: 30px
+}
+
+.right_tb td.txt {
+	font-size: 14px;
+	height: 24px;
+	line-height: 24px;
+	color: #fff;
+}
+
+.right_input {
+	width: 160px;
+	height: 25px;
+	border: 1px #fff solid;
+}
+
+.right_bnt {
+	width: 81px;
+	height: 23px;
+	margin-left: 46px;
+}
+
+.left_bg {
+	background-image: url(left_pic.jpg);
+	width: 393px;
+	height: 621px;
+}
+
+.left_text {
+	width: 200px;
+	height: 26px;
+	line-height: 26px;
+	margin: 140px auto 0px auto;
+	font-size: 12px;
+	color: #FFFFFF;
+}
